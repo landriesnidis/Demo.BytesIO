@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="STTech.BytesIO.Tcp" Version="2.7.3-beta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Demo.BytesIO.ChatProtocol\Demo.BytesIO.ChatProtocol.csproj" />
+  </ItemGroup>
+
+</Project>
