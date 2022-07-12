@@ -35,20 +35,36 @@ namespace Demo.BytesIO.SyncDemo
             tbRecv.AppendText($"[{DateTime.Now}] {msg}\r\n");
         }
 
+        private void PrintTime()
+        {
+            Console.WriteLine(DateTime.Now.ToString("HH:mm:ss.ffffff"));
+        }
+
         private void tsmiTest_Click(object sender, EventArgs e)
         {
-            var reply = client.Send(new byte[] { 0xAA, 0x01, 0xFF, 0xFF, 0xFF }, 5000, (sd, rd) => {
+            PrintTime();
+
+            var task = client.SendAsync(new byte[] { 0xAA, 0x01, 0xFF, 0xFF, 0xFF }, 5000, (sd, rd) => {
                 return rd[0] == 0xBB && sd[1] == rd[1];
             });
 
-            if(reply.Status == STTech.BytesIO.Core.Entity.ReplyStatus.Completed)
-            {
-                Print($"收到回复，内容是：{reply.Data.ToHexString()}");
-            }
-            else
-            {
-                Print($"未收到回复，原因是：{reply.Status}");
-            }
+            PrintTime();
+
+            task.WaitResult((status, reply) => {
+                if(status == TaskStatus.RanToCompletion)
+                {
+                    if (reply.Status == STTech.BytesIO.Core.Entity.ReplyStatus.Completed)
+                    {
+                        Print($"收到回复，内容是：{reply.Data.ToHexString()}");
+                    }
+                    else
+                    {
+                        Print($"未收到回复，原因是：{reply.Status}");
+                    }
+                }
+            });
+
+            PrintTime();
         }
     }
 }
