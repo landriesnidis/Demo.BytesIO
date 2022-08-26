@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.BytesIO.ChatProtocol",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.BytesIO.DataUnpacker", "Demo.BytesIO.DataUnpacker\Demo.BytesIO.DataUnpacker.csproj", "{C3FBF698-129F-4FDA-A9BC-1AEBA219654D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.BytesIO.ChatSdk", "Demo.BytesIO.ChatSdk\Demo.BytesIO.ChatSdk.csproj", "{85EE51B3-9B88-4027-BDAF-5BB2AF19F36D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.BytesIO.ChatSdk", "Demo.BytesIO.ChatSdk\Demo.BytesIO.ChatSdk.csproj", "{85EE51B3-9B88-4027-BDAF-5BB2AF19F36D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.BytesIO.SyncDemo", "Demo.BytesIO.SyncDemo\Demo.BytesIO.SyncDemo.csproj", "{B989C257-9606-4C84-B843-C62B43C5F005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.BytesIO.Tcp.Tls", "Demo.BytesIO.Tcp.Tls\Demo.BytesIO.Tcp.Tls.csproj", "{8280CCB2-F75F-4F7A-A6E9-83D7F8CA6ED5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{B989C257-9606-4C84-B843-C62B43C5F005}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B989C257-9606-4C84-B843-C62B43C5F005}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B989C257-9606-4C84-B843-C62B43C5F005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8280CCB2-F75F-4F7A-A6E9-83D7F8CA6ED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8280CCB2-F75F-4F7A-A6E9-83D7F8CA6ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8280CCB2-F75F-4F7A-A6E9-83D7F8CA6ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8280CCB2-F75F-4F7A-A6E9-83D7F8CA6ED5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

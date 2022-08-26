@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="STTech.BytesIO.Core" Version="2.7.1-alpha" />
+    <PackageReference Include="STTech.BytesIO.Core" Version="2.9.2-Alpha0714" />
   </ItemGroup>
 
 </Project>

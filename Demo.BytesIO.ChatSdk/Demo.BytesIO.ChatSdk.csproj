@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="STTech.BytesIO.Tcp" Version="2.7.3-beta" />
+    <PackageReference Include="STTech.BytesIO.Tcp" Version="2.9.2-Alpha0714" />
   </ItemGroup>
 
   <ItemGroup>

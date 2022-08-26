@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 
 namespace Demo.BytesIO.ChatSdk
 {
-    public class ChatClient : TcpClient, IDataSender<ChatMessageRequest>
+    public class ChatClient : TcpClient,IUnpackerSupport<ChatMessageResponse>
     {
-        private Unpacker<ChatMessageResponse> unpacker;
+        public Unpacker<ChatMessageResponse> Unpacker { get; }
 
         private Dictionary<string, FileStream> dictFileStream = new Dictionary<string, FileStream>();
 
@@ -54,7 +54,7 @@ namespace Demo.BytesIO.ChatSdk
 
         public ChatClient()
         {
-            unpacker = new Unpacker<ChatMessageResponse>(this,bytes => {
+            Unpacker = new Unpacker<ChatMessageResponse>(this,bytes => {
                 var len = bytes.Count();
                 if (len < 5)
                 {
@@ -65,14 +65,15 @@ namespace Demo.BytesIO.ChatSdk
                 var argsLen = BitConverter.ToUInt16(arr,3);
                 return 5 + dataLen + argsLen;
             });
-            unpacker.OnDataParsed += Unpacker_OnDataParsed;
+            this.BindUnpacker(Unpacker);
+            Unpacker.OnDataParsed += Unpacker_OnDataParsed;
 
             this.OnDataReceived += ChatClient_OnDataReceived;
         }
 
         private void ChatClient_OnDataReceived(object sender, STTech.BytesIO.Core.Entity.DataReceivedEventArgs e)
         {
-            unpacker.Input(e.Data);
+            Unpacker.Input(e.Data);
         }
 
         private void Unpacker_OnDataParsed(object sender, DataParsedEventArgs<ChatMessageResponse> e)
@@ -137,19 +138,9 @@ namespace Demo.BytesIO.ChatSdk
             }
         }
 
-        public void Send(ChatMessageRequest data)
-        {
-            Send(data.GetBytes());
-        }
-
-        public Task SendAsync(ChatMessageRequest data)
-        {
-            return SendAsync(data.GetBytes());
-        }
-
         public void SendText(string text)
         {
-            Send(new ChatMessageRequest()
+            this.Send(new ChatMessageRequest()
             {
                 Type = ChatMessageType.Text,
                 Data = text.GetBytes(),
@@ -158,7 +149,7 @@ namespace Demo.BytesIO.ChatSdk
 
         public void SendShake()
         {
-            Send(new ChatMessageRequest()
+            this.Send(new ChatMessageRequest()
             {
                 Type = ChatMessageType.Shake,
             });

@@ -55,7 +55,7 @@ namespace Demo.BytesIO.SyncDemo
                 {
                     if (reply.Status == STTech.BytesIO.Core.Entity.ReplyStatus.Completed)
                     {
-                        Print($"收到回复，内容是：{reply.Data.ToHexString()}");
+                        Print($"收到回复，内容是：{reply.GetBytes().ToHexString()}");
                     }
                     else
                     {
