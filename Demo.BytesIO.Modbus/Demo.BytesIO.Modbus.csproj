@@ -45,6 +45,18 @@
     <Reference Include="ApeFree.CodePlus.Algorithm, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\.NET\STTech.BytesIO\packages\ApeFree.CodePlus.Algorithm.0.9.6\lib\net45\ApeFree.CodePlus.Algorithm.dll</HintPath>
     </Reference>
+    <Reference Include="STTech.BytesIO.Core, Version=2.11.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.BytesIO.Core.2.11.3-beta0905\lib\net45\STTech.BytesIO.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="STTech.BytesIO.Modbus, Version=2.11.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.BytesIO.Modbus.2.11.3-beta0905\lib\net45\STTech.BytesIO.Modbus.dll</HintPath>
+    </Reference>
+    <Reference Include="STTech.BytesIO.Serial, Version=2.11.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.BytesIO.Serial.2.11.3-beta0905\lib\net45\STTech.BytesIO.Serial.dll</HintPath>
+    </Reference>
+    <Reference Include="STTech.BytesIO.Tcp, Version=2.11.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.BytesIO.Tcp.2.11.3-beta0905\lib\net45\STTech.BytesIO.Tcp.dll</HintPath>
+    </Reference>
     <Reference Include="STTech.CodePlus, Version=1.5.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\STTech.CodePlus.1.5.5\lib\net45\STTech.CodePlus.dll</HintPath>
     </Reference>
@@ -104,24 +116,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\.NET\STTech.BytesIO\STTech.BytesIO.Core\STTech.BytesIO.Core.csproj">
-      <Project>{2dd119d7-42ed-486d-81cd-3b908041185e}</Project>
-      <Name>STTech.BytesIO.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\.NET\STTech.BytesIO\STTech.BytesIO.Modbus\STTech.BytesIO.Modbus.csproj">
-      <Project>{4ac00cc7-d0d9-469f-ace5-1b942443eb71}</Project>
-      <Name>STTech.BytesIO.Modbus</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\.NET\STTech.BytesIO\STTech.BytesIO.Serial\STTech.BytesIO.Serial.csproj">
-      <Project>{040d665e-a81f-46c2-903d-2a2c83138430}</Project>
-      <Name>STTech.BytesIO.Serial</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\.NET\STTech.BytesIO\STTech.BytesIO.Tcp\STTech.BytesIO.Tcp.csproj">
-      <Project>{94f0f307-1ee8-4de0-86e1-8be335035693}</Project>
-      <Name>STTech.BytesIO.Tcp</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ic_send.png" />
