@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.BytesIO.SyncDemo", "De
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.BytesIO.Tcp.Tls", "Demo.BytesIO.Tcp.Tls\Demo.BytesIO.Tcp.Tls.csproj", "{8280CCB2-F75F-4F7A-A6E9-83D7F8CA6ED5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.BytesIO.Modbus", "Demo.BytesIO.Modbus\Demo.BytesIO.Modbus.csproj", "{E5F3D755-AE0D-44CD-A3AA-F5403611D502}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{8280CCB2-F75F-4F7A-A6E9-83D7F8CA6ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8280CCB2-F75F-4F7A-A6E9-83D7F8CA6ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8280CCB2-F75F-4F7A-A6E9-83D7F8CA6ED5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5F3D755-AE0D-44CD-A3AA-F5403611D502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F3D755-AE0D-44CD-A3AA-F5403611D502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F3D755-AE0D-44CD-A3AA-F5403611D502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F3D755-AE0D-44CD-A3AA-F5403611D502}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

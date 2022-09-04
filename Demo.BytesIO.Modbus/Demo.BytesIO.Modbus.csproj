@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E5F3D755-AE0D-44CD-A3AA-F5403611D502}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Demo.BytesIO.Modbus</RootNamespace>
+    <AssemblyName>Demo.BytesIO.Modbus</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ApeFree.ApeDialogs, Version=0.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\.NET\STTech.BytesIO\packages\ApeFree.ApeDialogs.0.9.1-Beta0904\lib\net45\ApeFree.ApeDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="ApeFree.ApeForms.Core, Version=0.9.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\.NET\STTech.BytesIO\packages\ApeFree.ApeForms.Core.0.9.7\lib\net461\ApeFree.ApeForms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ApeFree.ApeForms.Forms, Version=0.9.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\.NET\STTech.BytesIO\packages\ApeFree.ApeForms.Forms.0.9.7\lib\net461\ApeFree.ApeForms.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="ApeFree.CodePlus.Algorithm, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\.NET\STTech.BytesIO\packages\ApeFree.CodePlus.Algorithm.0.9.6\lib\net45\ApeFree.CodePlus.Algorithm.dll</HintPath>
+    </Reference>
+    <Reference Include="STTech.CodePlus, Version=1.5.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.CodePlus.1.5.5\lib\net45\STTech.CodePlus.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ModbusClientPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModbusClientPanel.Designer.cs">
+      <DependentUpon>ModbusClientPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModbusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModbusForm.Designer.cs">
+      <DependentUpon>ModbusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ModbusClientPanel.resx">
+      <DependentUpon>ModbusClientPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModbusForm.resx">
+      <DependentUpon>ModbusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\.NET\STTech.BytesIO\STTech.BytesIO.Core\STTech.BytesIO.Core.csproj">
+      <Project>{2dd119d7-42ed-486d-81cd-3b908041185e}</Project>
+      <Name>STTech.BytesIO.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\.NET\STTech.BytesIO\STTech.BytesIO.Modbus\STTech.BytesIO.Modbus.csproj">
+      <Project>{4ac00cc7-d0d9-469f-ace5-1b942443eb71}</Project>
+      <Name>STTech.BytesIO.Modbus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\.NET\STTech.BytesIO\STTech.BytesIO.Serial\STTech.BytesIO.Serial.csproj">
+      <Project>{040d665e-a81f-46c2-903d-2a2c83138430}</Project>
+      <Name>STTech.BytesIO.Serial</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\.NET\STTech.BytesIO\STTech.BytesIO.Tcp\STTech.BytesIO.Tcp.csproj">
+      <Project>{94f0f307-1ee8-4de0-86e1-8be335035693}</Project>
+      <Name>STTech.BytesIO.Tcp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_new_packet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_new_client.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_connect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_disconnect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_clean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_edit.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
