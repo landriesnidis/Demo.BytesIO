@@ -21,14 +21,15 @@ namespace Demo.BytesIO.Server
             CheckForIllegalCrossThreadCalls = false;
 
             server = new TcpServer();
-            server.Port =int.Parse(tbPort.Text);
+            server.Port = int.Parse(tbPort.Text);
 
             server.Started += Server_Started;
             server.Closed += Server_Closed;
             server.ClientConnected += Server_ClientConnected;
             server.ClientDisconnected += Server_ClientDisconnected;
 
-            server.ClientConnectionAcceptedHandle = (s, e) => {
+            server.ClientConnectionAcceptedHandle = (s, e) =>
+            {
                 if (server.Clients.Count() < 3)
                 {
                     return true;
@@ -57,9 +58,9 @@ namespace Demo.BytesIO.Server
             TcpClient tcpClient = (TcpClient)sender;
             // Print($"来自客户端[{tcpClient.RemoteEndPoint}]的消息: {e.Data.ToHexString()}");
 
-            foreach(TcpClient client in server.Clients)
+            foreach (TcpClient client in server.Clients)
             {
-                if(client != tcpClient)
+                if (client != tcpClient)
                 {
                     client.SendAsync(e.Data);
                 }
@@ -90,6 +91,18 @@ namespace Demo.BytesIO.Server
         private void Print(string msg)
         {
             tbLog.AppendText($"[{DateTime.Now}] {msg}\r\n");
+        }
+
+        private void cbClients_DropDown(object sender, EventArgs e)
+        {
+            cbClients.Items.Clear();
+            cbClients.Items.AddRange(server.Clients.Select(c => c.RemoteEndPoint.ToString()).ToArray());
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            var client = server.Clients.FirstOrDefault(c => c.RemoteEndPoint.ToString() == cbClients.Text);
+            client?.Send(tbSend.Text.GetBytes());
         }
     }
 }
