@@ -1,5 +1,4 @@
 ﻿using STTech.BytesIO.Core;
-using STTech.BytesIO.Serial;
 using STTech.BytesIO.Tcp;
 using System;
 using System.Collections.Generic;
@@ -53,7 +52,7 @@ namespace Demo.BytesIO.SyncDemo
             task.WaitResult((status, reply) => {
                 if(status == TaskStatus.RanToCompletion)
                 {
-                    if (reply.Status == STTech.BytesIO.Core.Entity.ReplyStatus.Completed)
+                    if (reply.Status == STTech.BytesIO.Core.ReplyStatus.Completed)
                     {
                         Print($"收到回复，内容是：{reply.GetBytes().ToHexString()}");
                     }

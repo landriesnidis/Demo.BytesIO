@@ -23,17 +23,17 @@ namespace Demo.BytesIO.Tcp.Tls
             client.OnTlsVerifySuccessfully += Client_OnTlsVerifySuccessfully;
         }
 
-        private static void Client_OnDisconnected(object sender, STTech.BytesIO.Core.Entity.DisconnectedEventArgs e)
+        private static void Client_OnDisconnected(object sender, STTech.BytesIO.Core.DisconnectedEventArgs e)
         {
             Console.WriteLine("连接断开");
         }
 
-        private static void Client_OnConnectionFailed(object sender, STTech.BytesIO.Core.Entity.ConnectionFailedEventArgs e)
+        private static void Client_OnConnectionFailed(object sender, STTech.BytesIO.Core.ConnectionFailedEventArgs e)
         {
             Console.WriteLine("连接失败");
         }
 
-        private static void Client_OnConnectedSuccessfully(object sender, STTech.BytesIO.Core.Entity.ConnectedSuccessfullyEventArgs e)
+        private static void Client_OnConnectedSuccessfully(object sender, STTech.BytesIO.Core.ConnectedSuccessfullyEventArgs e)
         {
             Console.WriteLine("连接成功");
         }

@@ -71,7 +71,7 @@ namespace Demo.BytesIO.ChatSdk
             this.OnDataReceived += ChatClient_OnDataReceived;
         }
 
-        private void ChatClient_OnDataReceived(object sender, STTech.BytesIO.Core.Entity.DataReceivedEventArgs e)
+        private void ChatClient_OnDataReceived(object sender, STTech.BytesIO.Core.DataReceivedEventArgs e)
         {
             Unpacker.Input(e.Data);
         }

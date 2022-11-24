@@ -1,5 +1,5 @@
 ﻿using STTech.BytesIO.Core;
-using STTech.BytesIO.Core.Entity;
+using STTech.BytesIO.Core;
 using STTech.BytesIO.Serial;
 using STTech.BytesIO.Tcp;
 using System;

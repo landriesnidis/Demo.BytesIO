@@ -39,27 +39,27 @@ namespace Demo.BytesIO.Client
             client.OnExceptionOccurs += Client_OnExceptionOccurs;
         }
 
-        private void Client_OnExceptionOccurs(object sender, STTech.BytesIO.Core.Entity.ExceptionOccursEventArgs e)
+        private void Client_OnExceptionOccurs(object sender, STTech.BytesIO.Core.ExceptionOccursEventArgs e)
         {
             Print($"发生了一个异常：{e.Exception.Message}");
         }
 
-        private void Client_OnDataSent(object sender, STTech.BytesIO.Core.Entity.DataSentEventArgs e)
+        private void Client_OnDataSent(object sender, STTech.BytesIO.Core.DataSentEventArgs e)
         {
             // Print($"发送数据：{e.Data.EncodeToString("GBK")}");
         }
 
-        private void Client_OnDisconnected(object sender, STTech.BytesIO.Core.Entity.DisconnectedEventArgs e)
+        private void Client_OnDisconnected(object sender, STTech.BytesIO.Core.DisconnectedEventArgs e)
         {
             Print($"已断开({e.ReasonCode})");
         }
 
-        private void Client_OnConnectedSuccessfully(object sender, STTech.BytesIO.Core.Entity.ConnectedSuccessfullyEventArgs e)
+        private void Client_OnConnectedSuccessfully(object sender, STTech.BytesIO.Core.ConnectedSuccessfullyEventArgs e)
         {
             Print("连接成功");
         }
 
-        private void Client_OnDataReceived(object sender, STTech.BytesIO.Core.Entity.DataReceivedEventArgs e)
+        private void Client_OnDataReceived(object sender, STTech.BytesIO.Core.DataReceivedEventArgs e)
         {
             // Print($"收到数据：{e.Data.EncodeToString("GBK")}");
 

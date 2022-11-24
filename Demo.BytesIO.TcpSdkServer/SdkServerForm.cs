@@ -54,7 +54,7 @@ namespace Demo.BytesIO.TcpSdkServer
             e.Client.OnDataReceived += Client_OnDataReceived;
         }
 
-        private void Client_OnDataReceived(object sender, STTech.BytesIO.Core.Entity.DataReceivedEventArgs e)
+        private void Client_OnDataReceived(object sender, STTech.BytesIO.Core.DataReceivedEventArgs e)
         {
             TcpClient tcpClient = (TcpClient)sender;
             Print($"来自客户端[{tcpClient.RemoteEndPoint}]的消息: {e.Data.ToHexString()}");

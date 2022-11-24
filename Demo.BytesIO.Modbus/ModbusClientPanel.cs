@@ -2,7 +2,6 @@
 using ApeFree.ApeDialogs.Settings;
 using ApeFree.ApeForms.Forms.Dialogs;
 using STTech.BytesIO.Core;
-using STTech.BytesIO.Core.Entity;
 using STTech.BytesIO.Modbus;
 using System;
 using System.Collections.Generic;
@@ -54,23 +53,23 @@ namespace Demo.BytesIO.Modbus
             Print($"收到数据：{e.Data.ToHexString()}");
         }
 
-        private void Client_OnExceptionOccurs(object sender, STTech.BytesIO.Core.Entity.ExceptionOccursEventArgs e)
+        private void Client_OnExceptionOccurs(object sender, STTech.BytesIO.Core.ExceptionOccursEventArgs e)
         {
             Print($"发生异常：{e.Exception.Message}");
         }
 
-        private void Client_OnDataSent(object sender, STTech.BytesIO.Core.Entity.DataSentEventArgs e)
+        private void Client_OnDataSent(object sender, STTech.BytesIO.Core.DataSentEventArgs e)
         {
             Print($"发送数据：{e.Data.ToHexString()}");
         }
 
-        private void Client_OnDisconnected(object sender, STTech.BytesIO.Core.Entity.DisconnectedEventArgs e)
+        private void Client_OnDisconnected(object sender, STTech.BytesIO.Core.DisconnectedEventArgs e)
         {
             Print($"已断开({e.ReasonCode})");
             pgConnectionInfo.Enabled = true;
         }
 
-        private void Client_OnConnectedSuccessfully(object sender, STTech.BytesIO.Core.Entity.ConnectedSuccessfullyEventArgs e)
+        private void Client_OnConnectedSuccessfully(object sender, STTech.BytesIO.Core.ConnectedSuccessfullyEventArgs e)
         {
             Print("连接成功");
             pgConnectionInfo.Enabled = false;
@@ -83,7 +82,7 @@ namespace Demo.BytesIO.Modbus
 
         private void btnDisconnect_Click(object sender, EventArgs e)
         {
-            client.Disconnect(DisconnectionReasonCode.Active);
+            client.Disconnect();
         }
 
         private void pgRequest_SelectedObjectsChanged(object sender, EventArgs e)
@@ -100,8 +99,15 @@ namespace Demo.BytesIO.Modbus
 
         private void btnSend_Click(object sender, EventArgs e)
         {
+
+            //var reply = client.ReadCoilRegister(1, 1, 1, 3000);
+            //if (reply.Status == ReplyStatus.Completed)
+            //{
+            //    var resp = reply.GetResponse();
+            //}
+
             var request = pgRequest.SelectedObject as ModbusRequest;
-            client.Send(request);
+            client.Send(request.GetBytes());
         }
 
         private void btnClean_Click(object sender, EventArgs e)

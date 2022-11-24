@@ -44,14 +44,14 @@
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="STTech.BytesIO.Core, Version=2.11.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.BytesIO.Core.2.11.3-beta0905\lib\net45\STTech.BytesIO.Core.dll</HintPath>
+    <Reference Include="STTech.BytesIO.Core, Version=2.12.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.BytesIO.Core.2.12.8-Beta1124\lib\net45\STTech.BytesIO.Core.dll</HintPath>
     </Reference>
-    <Reference Include="STTech.BytesIO.Tcp, Version=2.11.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.BytesIO.Tcp.2.11.3-beta0907\lib\net45\STTech.BytesIO.Tcp.dll</HintPath>
+    <Reference Include="STTech.BytesIO.Tcp, Version=2.12.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.BytesIO.Tcp.2.12.7\lib\net45\STTech.BytesIO.Tcp.dll</HintPath>
     </Reference>
-    <Reference Include="STTech.CodePlus, Version=1.5.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\.NET\STTech.BytesIO\packages\STTech.CodePlus.1.5.5\lib\net45\STTech.CodePlus.dll</HintPath>
+    <Reference Include="STTech.CodePlus, Version=1.5.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.CodePlus.1.5.13\lib\net45\STTech.CodePlus.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -102,6 +102,9 @@
     </Reference>
     <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
