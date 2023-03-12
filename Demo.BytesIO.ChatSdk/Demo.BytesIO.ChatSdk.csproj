@@ -1,11 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+ <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="STTech.BytesIO.Tcp" Version="2.12.7" />
+    <PackageReference Include="STTech.BytesIO.Core" Version="2.12.9" />
+    <PackageReference Include="STTech.BytesIO.Tcp" Version="2.12.9" />
   </ItemGroup>
 
   <ItemGroup>

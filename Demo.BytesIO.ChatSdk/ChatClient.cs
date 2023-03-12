@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Demo.BytesIO.ChatSdk
 {
-    public class ChatClient : TcpClient,IUnpackerSupport<ChatMessageResponse>
+    public class ChatClient : VirtualClient,IUnpackerSupport<ChatMessageResponse>
     {
         public Unpacker<ChatMessageResponse> Unpacker { get; }
 
@@ -50,8 +50,6 @@ namespace Demo.BytesIO.ChatSdk
         /// </summary>
         public event EventHandler<FileReceivedEventArgs> FileReceived;
 
-
-
         public ChatClient()
         {
             Unpacker = new Unpacker<ChatMessageResponse>(this,bytes => {
@@ -67,13 +65,6 @@ namespace Demo.BytesIO.ChatSdk
             });
             this.BindUnpacker(Unpacker);
             Unpacker.OnDataParsed += Unpacker_OnDataParsed;
-
-            this.OnDataReceived += ChatClient_OnDataReceived;
-        }
-
-        private void ChatClient_OnDataReceived(object sender, STTech.BytesIO.Core.DataReceivedEventArgs e)
-        {
-            Unpacker.Input(e.Data);
         }
 
         private void Unpacker_OnDataParsed(object sender, DataParsedEventArgs<ChatMessageResponse> e)
@@ -82,7 +73,6 @@ namespace Demo.BytesIO.ChatSdk
             switch (resp.Type)
             {
                 case ChatMessageType.Text:
-                    // Print($"收到消息：{resp.Data.EncodeToString()}");
                     TextReceived?.Invoke(this,new TextReceivedEventArgs() { Text = resp.Data.EncodeToString() });
                     break;
                 case ChatMessageType.FileInfo:
@@ -98,7 +88,6 @@ namespace Demo.BytesIO.ChatSdk
                             File.Delete(filePath);
                         }
                         Directory.CreateDirectory(FileSavePath);
-                        // Print($"正在接收文件：{fileName}");
 
                         FileAccept?.Invoke(this,new FileAcceptEventArgs() {
                             FilePath = filePath
@@ -120,9 +109,8 @@ namespace Demo.BytesIO.ChatSdk
                         FileStream fileStream = dictFileStream[filePath];
                         fileStream.Close();
                         fileStream.Dispose();
+                        dictFileStream.Remove(filePath);
 
-                        //Process.Start("Explorer.exe", $"/select,{filePath}");
-                        //Print($"完成接收文件：{filePath}");
                         FileReceived?.Invoke(this, new FileReceivedEventArgs()
                         {
                             FilePath = filePath
@@ -130,11 +118,8 @@ namespace Demo.BytesIO.ChatSdk
                     }
                     break;
                 case ChatMessageType.Shake:
-                    // this.ParentForm.Shake();
-                    // Print("收到一个窗口抖动");
                     ShakeReceived?.Invoke(this,new ShakeReceivedEventArgs());
                     break;
-
             }
         }
 
@@ -183,8 +168,7 @@ namespace Demo.BytesIO.ChatSdk
                         Data = len == buffer.Length ? buffer : buffer.Take(len).ToArray(),
                         Args = fileName.GetBytes(),
                     };
-                    this.SendAsync(req2);
-
+                    this.Send(req2);
                     sentCount += len;
 
                     // Print($"发送文件:{fileName} ({sentCount * 100.0 / fileSize}%)");
