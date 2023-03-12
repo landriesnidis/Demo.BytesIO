@@ -34,14 +34,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ApeFree.ApeDialogs, Version=0.9.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeDialogs.0.9.2\lib\net45\ApeFree.ApeDialogs.dll</HintPath>
+    <Reference Include="ApeFree.ApeDialogs, Version=0.10.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ApeFree.ApeDialogs.0.10.4\lib\net45\ApeFree.ApeDialogs.dll</HintPath>
     </Reference>
-    <Reference Include="ApeFree.ApeForms.Core, Version=0.9.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeForms.Core.0.9.11\lib\net461\ApeFree.ApeForms.Core.dll</HintPath>
+    <Reference Include="ApeFree.ApeForms.Core, Version=0.10.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ApeFree.ApeForms.Core.0.10.4\lib\net461\ApeFree.ApeForms.Core.dll</HintPath>
     </Reference>
-    <Reference Include="ApeFree.ApeForms.Forms, Version=0.9.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeForms.Forms.0.9.11\lib\net461\ApeFree.ApeForms.Forms.dll</HintPath>
+    <Reference Include="ApeFree.ApeForms.Forms, Version=0.10.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ApeFree.ApeForms.Forms.0.10.4\lib\net461\ApeFree.ApeForms.Forms.dll</HintPath>
     </Reference>
     <Reference Include="ApeFree.CodePlus.Algorithm, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ApeFree.CodePlus.Algorithm.0.9.6\lib\net45\ApeFree.CodePlus.Algorithm.dll</HintPath>
@@ -49,17 +49,20 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="STTech.BytesIO.Core, Version=2.12.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.BytesIO.Core.2.12.8-Beta1124\lib\net45\STTech.BytesIO.Core.dll</HintPath>
+    <Reference Include="STTech.BytesIO.Core, Version=2.12.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.BytesIO.Core.2.12.9\lib\net45\STTech.BytesIO.Core.dll</HintPath>
     </Reference>
-    <Reference Include="STTech.BytesIO.Serial, Version=2.12.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.BytesIO.Serial.2.12.7\lib\net45\STTech.BytesIO.Serial.dll</HintPath>
+    <Reference Include="STTech.BytesIO.Serial, Version=2.12.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.BytesIO.Serial.2.12.9\lib\net45\STTech.BytesIO.Serial.dll</HintPath>
     </Reference>
-    <Reference Include="STTech.BytesIO.Tcp, Version=2.12.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.BytesIO.Tcp.2.12.7\lib\net45\STTech.BytesIO.Tcp.dll</HintPath>
+    <Reference Include="STTech.BytesIO.Tcp, Version=2.12.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.BytesIO.Tcp.2.12.9\lib\net45\STTech.BytesIO.Tcp.dll</HintPath>
     </Reference>
-    <Reference Include="STTech.CodePlus, Version=1.5.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.CodePlus.1.5.13\lib\net45\STTech.CodePlus.dll</HintPath>
+    <Reference Include="STTech.BytesIO.Udp, Version=2.12.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.BytesIO.Udp.2.12.9\lib\net45\STTech.BytesIO.Udp.dll</HintPath>
+    </Reference>
+    <Reference Include="STTech.CodePlus, Version=1.5.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.CodePlus.1.5.14\lib\net45\STTech.CodePlus.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -125,6 +128,10 @@
     <ProjectReference Include="..\Demo.BytesIO.ChatProtocol\Demo.BytesIO.ChatProtocol.csproj">
       <Project>{E463C651-A171-4C8C-99D7-2B05508495CD}</Project>
       <Name>Demo.BytesIO.ChatProtocol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.BytesIO.ChatSdk\Demo.BytesIO.ChatSdk.csproj">
+      <Project>{85EE51B3-9B88-4027-BDAF-5BB2AF19F36D}</Project>
+      <Name>Demo.BytesIO.ChatSdk</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

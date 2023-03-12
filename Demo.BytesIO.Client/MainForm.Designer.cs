@@ -33,6 +33,7 @@
             this.tsmiCreateTcpClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCreateSerialClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tab = new ApeFree.ApeForms.Core.Controls.SlideTabControl();
+            this.tsmiCreateUdpClient = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             // 
             this.新建ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiCreateTcpClient,
+            this.tsmiCreateUdpClient,
             this.tsmiCreateSerialClient});
             this.新建ToolStripMenuItem.Name = "新建ToolStripMenuItem";
             this.新建ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
@@ -58,14 +60,14 @@
             // tsmiCreateTcpClient
             // 
             this.tsmiCreateTcpClient.Name = "tsmiCreateTcpClient";
-            this.tsmiCreateTcpClient.Size = new System.Drawing.Size(136, 22);
+            this.tsmiCreateTcpClient.Size = new System.Drawing.Size(180, 22);
             this.tsmiCreateTcpClient.Text = "TCP客户端";
             this.tsmiCreateTcpClient.Click += new System.EventHandler(this.tsmiCreateTcpClient_Click);
             // 
             // tsmiCreateSerialClient
             // 
             this.tsmiCreateSerialClient.Name = "tsmiCreateSerialClient";
-            this.tsmiCreateSerialClient.Size = new System.Drawing.Size(136, 22);
+            this.tsmiCreateSerialClient.Size = new System.Drawing.Size(180, 22);
             this.tsmiCreateSerialClient.Text = "串口客户端";
             this.tsmiCreateSerialClient.Click += new System.EventHandler(this.tsmiCreateSerialClient_Click);
             // 
@@ -78,6 +80,13 @@
             this.tab.TabIndex = 1;
             this.tab.TitleDock = System.Windows.Forms.DockStyle.Top;
             this.tab.TitleLayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            // 
+            // tsmiCreateUdpClient
+            // 
+            this.tsmiCreateUdpClient.Name = "tsmiCreateUdpClient";
+            this.tsmiCreateUdpClient.Size = new System.Drawing.Size(180, 22);
+            this.tsmiCreateUdpClient.Text = "UDP客户端";
+            this.tsmiCreateUdpClient.Click += new System.EventHandler(this.tsmiCreateUdpClient_Click);
             // 
             // MainForm
             // 
@@ -103,5 +112,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCreateTcpClient;
         private System.Windows.Forms.ToolStripMenuItem tsmiCreateSerialClient;
         private ApeFree.ApeForms.Core.Controls.SlideTabControl tab;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCreateUdpClient;
     }
 }
