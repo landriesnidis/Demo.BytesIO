@@ -56,14 +56,14 @@ namespace Demo.BytesIO.TcpSdkServer
 
         private void Client_OnDataReceived(object sender, STTech.BytesIO.Core.DataReceivedEventArgs e)
         {
-            TcpClient tcpClient = (TcpClient)sender;
+            TestSdkClient tcpClient = (TestSdkClient)sender;
             Print($"来自客户端[{tcpClient.RemoteEndPoint}]的消息: {e.Data.ToHexString()}");
 
-            foreach (TcpClient client in server.Clients)
+            foreach (TestSdkClient client in server.Clients)
             {
                 if (client != tcpClient)
                 {
-                    client.SendAsync(e.Data);
+                    client.Send(e.Data);
                 }
             }
         }

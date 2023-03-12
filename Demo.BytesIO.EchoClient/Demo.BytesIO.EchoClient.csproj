@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E5F3D755-AE0D-44CD-A3AA-F5403611D502}</ProjectGuid>
+    <ProjectGuid>{DF4B2AA3-E402-423C-BC99-A44EE4B3A9E3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Demo.BytesIO.Modbus</RootNamespace>
-    <AssemblyName>Demo.BytesIO.Modbus</AssemblyName>
+    <RootNamespace>Demo.BytesIO.EchoClient</RootNamespace>
+    <AssemblyName>Demo.BytesIO.EchoClient</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,32 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ApeFree.ApeDialogs, Version=0.10.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeDialogs.0.10.4\lib\net45\ApeFree.ApeDialogs.dll</HintPath>
-    </Reference>
-    <Reference Include="ApeFree.ApeForms.Core, Version=0.10.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeForms.Core.0.10.4\lib\net461\ApeFree.ApeForms.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="ApeFree.ApeForms.Forms, Version=0.10.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApeFree.ApeForms.Forms.0.10.4\lib\net461\ApeFree.ApeForms.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="ApeFree.CodePlus.Algorithm, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\.NET\STTech.BytesIO\packages\ApeFree.CodePlus.Algorithm.0.9.6\lib\net45\ApeFree.CodePlus.Algorithm.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="STTech.BytesIO.Core, Version=2.12.9.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\STTech.BytesIO.Core.2.12.9\lib\net45\STTech.BytesIO.Core.dll</HintPath>
     </Reference>
-    <Reference Include="STTech.BytesIO.Modbus, Version=2.11.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.BytesIO.Modbus.2.11.3-beta0905\lib\net45\STTech.BytesIO.Modbus.dll</HintPath>
-    </Reference>
     <Reference Include="STTech.BytesIO.Serial, Version=2.12.9.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\STTech.BytesIO.Serial.2.12.9\lib\net45\STTech.BytesIO.Serial.dll</HintPath>
-    </Reference>
-    <Reference Include="STTech.BytesIO.Tcp, Version=2.12.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.BytesIO.Tcp.2.12.9\lib\net45\STTech.BytesIO.Tcp.dll</HintPath>
     </Reference>
     <Reference Include="STTech.CodePlus, Version=1.5.14.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\STTech.CodePlus.1.5.14\lib\net45\STTech.CodePlus.dll</HintPath>
@@ -79,25 +58,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModbusClientPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ModbusClientPanel.Designer.cs">
-      <DependentUpon>ModbusClientPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModbusForm.cs">
+    <Compile Include="FormEcho.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModbusForm.Designer.cs">
-      <DependentUpon>ModbusForm.cs</DependentUpon>
+    <Compile Include="FormEcho.Designer.cs">
+      <DependentUpon>FormEcho.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ModbusClientPanel.resx">
-      <DependentUpon>ModbusClientPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModbusForm.resx">
-      <DependentUpon>ModbusForm.cs</DependentUpon>
+    <EmbeddedResource Include="FormEcho.resx">
+      <DependentUpon>FormEcho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -107,7 +77,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -122,27 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ic_send.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ic_new_packet.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ic_new_client.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ic_connect.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ic_disconnect.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ic_clean.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ic_edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
