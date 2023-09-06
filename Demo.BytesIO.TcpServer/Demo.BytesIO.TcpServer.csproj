@@ -44,15 +44,6 @@
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="STTech.BytesIO.Core, Version=2.12.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.BytesIO.Core.2.12.9\lib\net45\STTech.BytesIO.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="STTech.BytesIO.Tcp, Version=2.12.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.BytesIO.Tcp.2.12.9\lib\net45\STTech.BytesIO.Tcp.dll</HintPath>
-    </Reference>
-    <Reference Include="STTech.CodePlus, Version=1.5.14.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.CodePlus.1.5.14\lib\net45\STTech.CodePlus.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
@@ -154,6 +145,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\.NET\STTech.BytesIO\STTech.BytesIO.Core\STTech.BytesIO.Core.csproj">
+      <Project>{2dd119d7-42ed-486d-81cd-3b908041185e}</Project>
+      <Name>STTech.BytesIO.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\.NET\STTech.BytesIO\STTech.BytesIO.Tcp\STTech.BytesIO.Tcp.csproj">
+      <Project>{94F0F307-1EE8-4DE0-86E1-8BE335035693}</Project>
+      <Name>STTech.BytesIO.Tcp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\.NET\STTech.CodePlus\STTech.CodePlus\STTech.CodePlus.csproj">
+      <Project>{f1b836ee-34b4-49e7-a236-59ed6c96a95a}</Project>
+      <Name>STTech.CodePlus</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.6.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.6.0\build\Fody.targets')" />

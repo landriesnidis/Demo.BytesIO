@@ -32,6 +32,7 @@ namespace Demo.BytesIO.Client
 
             client.OnConnectedSuccessfully += Client_OnConnectedSuccessfully;
             client.OnDisconnected += Client_OnDisconnected;
+            client.OnConnectionFailed += Client_OnConnectionFailed;
             client.OnExceptionOccurs += Client_OnExceptionOccurs;
 
             client.FileAccept += Client_FileAccept;
@@ -40,6 +41,11 @@ namespace Demo.BytesIO.Client
             client.FileSent += Client_FileSent;
             client.ShakeReceived += Client_ShakeReceived;
             client.TextReceived += Client_TextReceived;
+        }
+
+        private void Client_OnConnectionFailed(object sender, ConnectionFailedEventArgs e)
+        {
+            Print($"连接失败：{e.Message}");
         }
 
         private void Client_TextReceived(object sender, ChatSdk.Entitiy.TextReceivedEventArgs e)
@@ -92,7 +98,7 @@ namespace Demo.BytesIO.Client
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            client.Connect();
+            client.Connect(500);
         }
 
         private void btnDisconnect_Click(object sender, EventArgs e)

@@ -79,8 +79,15 @@ namespace Demo.BytesIO.Server
 
         private void tsmiStart_Click(object sender, EventArgs e)
         {
-            server.Port = int.Parse(tbPort.Text);
-            server.StartAsync();
+            try
+            {
+                server.Port = int.Parse(tbPort.Text);
+                server.StartAsync();
+            }
+            catch (Exception ex)
+            {
+                Print($"启动服务异常：{ex.Message}");
+            }
         }
 
         private void tsmiClose_Click(object sender, EventArgs e)
