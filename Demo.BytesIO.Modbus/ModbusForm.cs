@@ -18,14 +18,24 @@ namespace Demo.BytesIO.Modbus
             InitializeComponent();
         }
 
-        private void tsmiCreateTcpClient_Click(object sender, EventArgs e)
+        private void tsmiModbusSerialPortRTU_Click(object sender, EventArgs e)
         {
-            tab.AddPage("ModbusTCP", new ModbusClientPanel(new ModbusTcpClient()));
+            tab.AddPage((sender as ToolStripItem).Text, new ModbusClientPanel(new ModbusSerialClient(ModbusProtocolFormat.RTU)));
         }
 
-        private void tsmiCreateSerialClient_Click(object sender, EventArgs e)
+        private void tsmiModbusTcpRTU_Click(object sender, EventArgs e)
         {
-            tab.AddPage("ModbusRTU", new ModbusClientPanel(new ModbusRtuClient() { ReceiveBufferSize = 65536, SendBufferSize = 65536 }));
+            tab.AddPage((sender as ToolStripItem).Text, new ModbusClientPanel(new ModbusTcpClient(ModbusProtocolFormat.RTU) { ReceiveBufferSize = 65536, SendBufferSize = 65536, ProtocolFormat = ModbusProtocolFormat.RTU }));
+        }
+
+        private void tsmiModbusTcpAscii_Click(object sender, EventArgs e)
+        {
+            tab.AddPage((sender as ToolStripItem).Text, new ModbusClientPanel(new ModbusTcpClient(ModbusProtocolFormat.ASCII) { ReceiveBufferSize = 65536, SendBufferSize = 65536, ProtocolFormat = ModbusProtocolFormat.ASCII }));
+        }
+
+        private void tsmiModbusSerialPortAscii_Click(object sender, EventArgs e)
+        {
+            tab.AddPage((sender as ToolStripItem).Text, new ModbusClientPanel(new ModbusSerialClient(ModbusProtocolFormat.ASCII)));
         }
     }
 }

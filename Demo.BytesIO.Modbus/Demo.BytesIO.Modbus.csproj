@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,26 +43,26 @@
     <Reference Include="ApeFree.ApeForms.Forms, Version=0.10.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ApeFree.ApeForms.Forms.0.10.4\lib\net461\ApeFree.ApeForms.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="ApeFree.CodePlus.Algorithm, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\.NET\STTech.BytesIO\packages\ApeFree.CodePlus.Algorithm.0.9.6\lib\net45\ApeFree.CodePlus.Algorithm.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="STTech.BytesIO.Core, Version=2.12.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.BytesIO.Core.2.12.9\lib\net45\STTech.BytesIO.Core.dll</HintPath>
+    <Reference Include="STTech.BytesIO.Core, Version=2.13.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.BytesIO.Core.2.13.6-alpha0807\lib\net45\STTech.BytesIO.Core.dll</HintPath>
     </Reference>
-    <Reference Include="STTech.BytesIO.Modbus, Version=2.11.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.BytesIO.Modbus.2.11.3-beta0905\lib\net45\STTech.BytesIO.Modbus.dll</HintPath>
+    <Reference Include="STTech.BytesIO.Modbus, Version=2.13.6.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.BytesIO.Modbus.2.13.6.1-alpha1116\lib\net45\STTech.BytesIO.Modbus.dll</HintPath>
     </Reference>
-    <Reference Include="STTech.BytesIO.Serial, Version=2.12.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.BytesIO.Serial.2.12.9\lib\net45\STTech.BytesIO.Serial.dll</HintPath>
+    <Reference Include="STTech.BytesIO.Serial, Version=2.13.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.BytesIO.Serial.2.13.3-alpha0707\lib\net45\STTech.BytesIO.Serial.dll</HintPath>
     </Reference>
-    <Reference Include="STTech.BytesIO.Tcp, Version=2.12.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.BytesIO.Tcp.2.12.9\lib\net45\STTech.BytesIO.Tcp.dll</HintPath>
+    <Reference Include="STTech.BytesIO.Tcp, Version=2.13.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.BytesIO.Tcp.2.13.3-alpha0707\lib\net45\STTech.BytesIO.Tcp.dll</HintPath>
     </Reference>
-    <Reference Include="STTech.CodePlus, Version=1.5.14.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.CodePlus.1.5.14\lib\net45\STTech.CodePlus.dll</HintPath>
+    <Reference Include="STTech.BytesIO.Udp, Version=2.12.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.BytesIO.Udp.2.12.9\lib\net45\STTech.BytesIO.Udp.dll</HintPath>
+    </Reference>
+    <Reference Include="STTech.CodePlus, Version=1.6.4.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.CodePlus.1.6.4.3-alpha1016\lib\net45\STTech.CodePlus.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
