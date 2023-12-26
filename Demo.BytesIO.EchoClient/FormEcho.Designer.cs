@@ -37,6 +37,7 @@
             this.btnOpen = new System.Windows.Forms.Button();
             this.cbPortName = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbSliceData = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbarDelay)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBaudRate)).BeginInit();
@@ -55,6 +56,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbSliceData);
             this.groupBox1.Controls.Add(this.labDelay);
             this.groupBox1.Controls.Add(this.tbarDelay);
             this.groupBox1.Controls.Add(this.label2);
@@ -150,6 +152,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "串口";
             // 
+            // cbSliceData
+            // 
+            this.cbSliceData.AutoSize = true;
+            this.cbSliceData.Location = new System.Drawing.Point(5, 191);
+            this.cbSliceData.Name = "cbSliceData";
+            this.cbSliceData.Size = new System.Drawing.Size(72, 16);
+            this.cbSliceData.TabIndex = 8;
+            this.cbSliceData.Text = "拆分发送";
+            this.cbSliceData.UseVisualStyleBackColor = true;
+            // 
             // EchoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -177,6 +189,7 @@
         private System.Windows.Forms.NumericUpDown nudBaudRate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labDelay;
+        private System.Windows.Forms.CheckBox cbSliceData;
     }
 }
 

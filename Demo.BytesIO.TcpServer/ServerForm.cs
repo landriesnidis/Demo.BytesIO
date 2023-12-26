@@ -27,6 +27,7 @@ namespace Demo.BytesIO.Server
             server.Closed += Server_Closed;
             server.ClientConnected += Server_ClientConnected;
             server.ClientDisconnected += Server_ClientDisconnected;
+            server.OnExceptionOccurs += Server_OnExceptionOccurs; ;
 
             server.ClientConnectionAcceptedHandle = (s, e) =>
             {
@@ -40,6 +41,11 @@ namespace Demo.BytesIO.Server
                     return false;
                 }
             };
+        }
+
+        private void Server_OnExceptionOccurs(object sender, ExceptionOccursEventArgs e)
+        {
+            Print($"发生错误：{e.Exception}");
         }
 
         private void Server_ClientDisconnected(object sender, STTech.BytesIO.Tcp.Entity.ClientDisconnectedEventArgs e)
@@ -56,7 +62,7 @@ namespace Demo.BytesIO.Server
         private void Client_OnDataReceived(object sender, STTech.BytesIO.Core.DataReceivedEventArgs e)
         {
             TcpClient tcpClient = (TcpClient)sender;
-            // Print($"来自客户端[{tcpClient.RemoteEndPoint}]的消息: {e.Data.ToHexString()}");
+            Print($"来自客户端[{tcpClient.RemoteEndPoint}]的消息: {e.Data.EncodeToString()}");
 
             foreach (TcpClient client in server.Clients)
             {

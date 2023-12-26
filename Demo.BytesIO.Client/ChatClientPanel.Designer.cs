@@ -1,6 +1,6 @@
 ﻿namespace Demo.BytesIO.Client
 {
-    partial class ClientPanel
+    partial class ChatClientPanel
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientPanel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChatClientPanel));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.propertyGrid = new System.Windows.Forms.PropertyGrid();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -39,10 +39,17 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tbSend = new System.Windows.Forms.RichTextBox();
             this.btnSend = new System.Windows.Forms.Button();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.btnSendShake = new System.Windows.Forms.ToolStripButton();
+            this.btnSendFile = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.文件保存路径ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbSavePath = new System.Windows.Forms.ToolStripTextBox();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -121,6 +128,7 @@
             // 
             this.groupBox3.Controls.Add(this.tbSend);
             this.groupBox3.Controls.Add(this.btnSend);
+            this.groupBox3.Controls.Add(this.toolStrip2);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox3.Location = new System.Drawing.Point(259, 446);
             this.groupBox3.Name = "groupBox3";
@@ -132,22 +140,79 @@
             // tbSend
             // 
             this.tbSend.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbSend.Location = new System.Drawing.Point(3, 17);
+            this.tbSend.Location = new System.Drawing.Point(3, 42);
             this.tbSend.Name = "tbSend";
-            this.tbSend.Size = new System.Drawing.Size(514, 80);
+            this.tbSend.Size = new System.Drawing.Size(514, 55);
             this.tbSend.TabIndex = 1;
             this.tbSend.Text = "";
             // 
             // btnSend
             // 
             this.btnSend.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSend.Location = new System.Drawing.Point(517, 17);
+            this.btnSend.Location = new System.Drawing.Point(517, 42);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(56, 80);
+            this.btnSend.Size = new System.Drawing.Size(56, 55);
             this.btnSend.TabIndex = 2;
             this.btnSend.Text = "发送";
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnSendShake,
+            this.btnSendFile,
+            this.toolStripDropDownButton1});
+            this.toolStrip2.Location = new System.Drawing.Point(3, 17);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(570, 25);
+            this.toolStrip2.TabIndex = 3;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // btnSendShake
+            // 
+            this.btnSendShake.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnSendShake.Image = ((System.Drawing.Image)(resources.GetObject("btnSendShake.Image")));
+            this.btnSendShake.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSendShake.Name = "btnSendShake";
+            this.btnSendShake.Size = new System.Drawing.Size(60, 22);
+            this.btnSendShake.Text = "窗口抖动";
+            this.btnSendShake.Click += new System.EventHandler(this.btnSendShake_Click);
+            // 
+            // btnSendFile
+            // 
+            this.btnSendFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnSendFile.Image = ((System.Drawing.Image)(resources.GetObject("btnSendFile.Image")));
+            this.btnSendFile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSendFile.Name = "btnSendFile";
+            this.btnSendFile.Size = new System.Drawing.Size(60, 22);
+            this.btnSendFile.Text = "发送文件";
+            this.btnSendFile.Click += new System.EventHandler(this.btnSendFile_Click);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.文件保存路径ToolStripMenuItem,
+            this.tbSavePath});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(45, 22);
+            this.toolStripDropDownButton1.Text = "设置";
+            // 
+            // 文件保存路径ToolStripMenuItem
+            // 
+            this.文件保存路径ToolStripMenuItem.Enabled = false;
+            this.文件保存路径ToolStripMenuItem.Name = "文件保存路径ToolStripMenuItem";
+            this.文件保存路径ToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.文件保存路径ToolStripMenuItem.Text = "文件保存路径";
+            // 
+            // tbSavePath
+            // 
+            this.tbSavePath.Name = "tbSavePath";
+            this.tbSavePath.Size = new System.Drawing.Size(180, 23);
+            this.tbSavePath.Text = ".\\RecvFile";
             // 
             // ClientPanel
             // 
@@ -164,6 +229,9 @@
             this.toolStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -180,6 +248,12 @@
         private System.Windows.Forms.RichTextBox tbRecv;
         private System.Windows.Forms.RichTextBox tbSend;
         private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton btnSendFile;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem 文件保存路径ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton btnSendShake;
+        private System.Windows.Forms.ToolStripTextBox tbSavePath;
     }
 }
 

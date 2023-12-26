@@ -108,7 +108,7 @@ namespace Demo.BytesIO.DataUnpacker
         /// </summary>
         public short Tilt { get; }
 
-        public SimpleData(IEnumerable<byte> bytes) : base(bytes)
+        public SimpleData(byte[] bytes) : base(bytes)
         {
             var data = bytes.ToArray();
             if (bytes.Count() != 8)
@@ -189,7 +189,7 @@ namespace Demo.BytesIO.DataUnpacker
             StartMark = SimpleData.StartMark;
         }
 
-        protected override int CalculatePacketLength(IEnumerable<byte> bytes) => 8;
+        protected override int CalculatePacketLength(byte[] bytes) => 8;
     }
 
     /// <summary>
@@ -203,7 +203,7 @@ namespace Demo.BytesIO.DataUnpacker
             StartMark = new byte[] { 0xAA, 0xBB };
         }
 
-        protected override int CalculatePacketLength(IEnumerable<byte> bytes)
+        protected override int CalculatePacketLength(byte[] bytes)
         {
             if (bytes.Count() < 3)
             {
@@ -229,7 +229,7 @@ namespace Demo.BytesIO.DataUnpacker
             StartMark = new byte[] { 0xAA, 0xBB };
         }
 
-        protected override int CalculatePacketLength(IEnumerable<byte> bytes)
+        protected override int CalculatePacketLength(byte[] bytes)
         {
             var index = bytes.IndexOf(EndMark);
             if (index < 0)

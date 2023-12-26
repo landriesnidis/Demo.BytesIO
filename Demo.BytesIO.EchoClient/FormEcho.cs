@@ -47,9 +47,14 @@ namespace Demo.BytesIO.EchoClient
             Task.Delay(tbarDelay.Value * 1000).Wait();
             lock (serialClient)
             {
-                foreach (byte b in e.Data)
+                foreach (var b in e.Data.Slice(2))
                 {
-                    serialClient.Send(new byte[] { b });
+                    serialClient.Send(b.ToArray());
+
+                    if (cbSliceData.Checked)
+                    {
+                        Task.Delay(1).Wait();
+                    }
                 }
             }
         }

@@ -33,7 +33,7 @@ namespace Demo.BytesIO.ChatProtocol
         public byte[] Data { get; }
         public byte[] Args { get; }
 
-        public ChatMessageResponse(IEnumerable<byte> bytes) : base(bytes)
+        public ChatMessageResponse(byte[] bytes) : base(bytes)
         {
             var array = bytes.ToArray();
 

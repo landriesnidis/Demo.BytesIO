@@ -33,14 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="STTech.BytesIO.Core, Version=2.12.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.BytesIO.Core.2.12.9\lib\net45\STTech.BytesIO.Core.dll</HintPath>
+    <Reference Include="STTech.BytesIO.Core, Version=2.14.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.BytesIO.Core.2.14.4\lib\net45\STTech.BytesIO.Core.dll</HintPath>
     </Reference>
-    <Reference Include="STTech.BytesIO.Serial, Version=2.12.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.BytesIO.Serial.2.12.9\lib\net45\STTech.BytesIO.Serial.dll</HintPath>
+    <Reference Include="STTech.BytesIO.Serial, Version=2.14.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.BytesIO.Serial.2.14.4\lib\net45\STTech.BytesIO.Serial.dll</HintPath>
     </Reference>
-    <Reference Include="STTech.CodePlus, Version=1.5.14.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\STTech.CodePlus.1.5.14\lib\net45\STTech.CodePlus.dll</HintPath>
+    <Reference Include="STTech.CodePlus, Version=1.6.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.CodePlus.1.6.5\lib\net45\STTech.CodePlus.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

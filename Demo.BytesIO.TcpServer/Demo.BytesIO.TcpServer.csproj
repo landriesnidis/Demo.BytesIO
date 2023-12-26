@@ -44,6 +44,9 @@
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="STTech.CodePlus, Version=1.6.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\STTech.CodePlus.1.6.5\lib\net45\STTech.CodePlus.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
@@ -148,16 +151,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\.NET\STTech.BytesIO\STTech.BytesIO.Core\STTech.BytesIO.Core.csproj">
-      <Project>{2dd119d7-42ed-486d-81cd-3b908041185e}</Project>
+      <Project>{2DD119D7-42ED-486D-81CD-3B908041185E}</Project>
       <Name>STTech.BytesIO.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\.NET\STTech.BytesIO\STTech.BytesIO.Tcp\STTech.BytesIO.Tcp.csproj">
       <Project>{94F0F307-1EE8-4DE0-86E1-8BE335035693}</Project>
       <Name>STTech.BytesIO.Tcp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\.NET\STTech.CodePlus\STTech.CodePlus\STTech.CodePlus.csproj">
-      <Project>{f1b836ee-34b4-49e7-a236-59ed6c96a95a}</Project>
-      <Name>STTech.CodePlus</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
